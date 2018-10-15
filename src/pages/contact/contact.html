@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ver Todo El Inventario <button ion-button (click)="recargar()">Recargar</button> 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of productList">
+    <img [src]="item.imageB64"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.name}}
+        </ion-card-title>
+      <p>
+        {{item.description}} 
+      </p>
+      <p>
+        Cantidad: {{item.count}}
+      </p>
+      <p>
+        Serial: {{item.serialCode}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

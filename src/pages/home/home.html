@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ingreso de articulo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Carga de Articulos</h2>
+  <p>
+    Modalidad de uso: debe completar el formulario y escanar el codigo de barra,
+    si gusta tomele una foto al producto
+  </p>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Marca</ion-label>
+      <ion-input type="text" [(ngModel)]="name" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Descripcion</ion-label>
+      <ion-input type="text" [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Cantidad</ion-label>
+      <ion-input type="number" [(ngModel)]="count" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button (click)="scan()" full>SCAN_  <ion-icon name="md-qr-scanner"></ion-icon>
+      </button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Codigo de Serie</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="serialCode" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button icon-right (click)="onTakePicture()" full>
+        Foto<ion-icon name="camera"></ion-icon>
+      </button>
+
+    </ion-item>
+
+    <ion-item>
+        <img [src]="imageB64" height="30%" width="50%" *ngIf="displayImage"/>
+    </ion-item>
+    <ion-item>
+        <button ion-button (click)="send()" full>ENVIAR <ion-icon name="ios-send"></ion-icon>
+        </button>
+    </ion-item>
+
+  </ion-list>
+{{message}}
+
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "zabatecoder",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
